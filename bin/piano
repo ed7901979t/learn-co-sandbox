@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative './lib/piano'   
+
+Piano::CLI.new.call    
+
+
+
