@@ -1,18 +1,23 @@
 class Piano::Pianists 
 
-def self.scrape_pianists
-  pianists = []
+def self.get_composers
+ composers = []
+    base_url = 'http://gnoted.com/9-websites-to-play-piano-online-for-free/'
+    #main_url = "#{base_url}/jobs?category=programming&type=&region=newyork"
+    data = self.data_scraper(base_url)
+    Nokogiri::HTML.parse(open('http://gnoted.com/9-websites-to-play-piano-online-for-free/')).title.strip
+    list_composer_description=data.css("h3")
+    list_composer_description=data.css('p[style="text-align: left;"]')
+		
+    list_composer_description.each do |data|
 
-doc=Nokogiri::HTML(open("https://www.liveabout.com/piano-composers-and-musicians-4123062"))
 
-list_pianist= doc.css(div id="list-sc_1-0")
-list_pianist.each do |pianist|
-list_pianist self.now
-list_pianist.title=pianist.css("h3").text.strip
-list_pianist.introduction=pianist.css("p").children[0].text.strip
-list_pianist.introduction=pianist.css("p").children[1].text.strip
-
-pianists << list_pianist
-
+     puts data
 end
-pianists 
+end
+def self.data_scraper(url)
+    Nokogiri::HTML(open(url))
+end
+
+self.get_composers
+end   
