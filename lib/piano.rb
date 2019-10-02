@@ -1,6 +1,8 @@
-require "./piano/version"
-require './piano/cli'
-require './piano/pianists'  
+require 'nokogiri'
+require 'open-uri'
+require "./lib/piano/version" 
+require './lib/piano/cli'
+require './lib/piano/pianists'    
 
 
  
