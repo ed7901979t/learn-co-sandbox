@@ -20,4 +20,4 @@ def self.data_scraper(url)
 end
 
 self.get_composers
-end   
+end    
