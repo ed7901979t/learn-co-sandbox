@@ -12,5 +12,5 @@ class Piano::CLI
     def goodbye
       puts "Goodbye"
     end
-end     
+end      
     
